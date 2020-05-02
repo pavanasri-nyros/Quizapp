@@ -1,0 +1,46 @@
+{% extends 'quiz/base.html' %}
+
+{% block content %}
+
+<div class="quizcontainer">
+
+    {% for result in results %}
+
+    <div class="question-number">
+        <h3>Question <span class= "question-num-value"></span> of<span class = "total-question"></span> </h3>
+
+    </div>
+    <div class="question">
+        {{result.question}}
+
+    </div>
+    <div class="options">
+        <div class="option1" id="0" >{{result.option1}}</div>
+        <div class="option2" id="1">{{result.option2}}</div>
+        <div class="option3" id="2">{{result.option3}}</div>
+        <div class="option4" id="3">{{result.option4}}</div>
+        <div style="display: none;" class="answer" id ="answer">{{result.answer}} </div>
+
+
+    </div>
+    {% endfor %}
+    <div class="button"> 
+        <button type="button" class="btn btn-primary">Next</button>
+
+    </div>
+    <div class="answers-tracker">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}
